@@ -1,7 +1,7 @@
 name: Wikibase Secondary CI
 on:
   push:
-    branches: [ master ]
+    branches: [ 'chore/improveSecondaryCI' ]
 
 env:
   LOG_DIR: ${{ github.workspace }}/logs
@@ -81,7 +81,7 @@ jobs:
       run: |
         bash ./build/ci-scripts/script.sh
     - name: Send mail
-      if: ${{ failure() }}
+      if: false
       uses: dawidd6/action-send-mail@v3.7.1
       with:
         server_address: smtp.gmail.com
